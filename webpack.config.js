@@ -1,57 +1,67 @@
-const path = require("path"); // Importa o módulo 'path' do Node.js para manipulação de caminhos de arquivos
-const HtmlWebpackPlugin = require("html-webpack-plugin"); // Plugin para gerar arquivos HTML
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // Plugin para extrair CSS em arquivos separados
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js", // Ponto de entrada do webpack, onde começa a construção do bundle
+  entry: "./src/index.js",
   output: {
-    filename: "main.js", // Nome do arquivo JavaScript de saída
-    path: path.resolve(__dirname, "dist"), // Diretório de saída absoluto usando o módulo 'path'
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
+    // Usa index.html como arquivo de inicio e faz bundle com suas dependências
     new HtmlWebpackPlugin({
-      filename: "index.html", // Nome do arquivo HTML de saída
-      template: "./src/index.html", // Arquivo HTML de template
+      filename: "index.html",
+      template: "./src/index.html",
     }),
+
+    // Minifica o arquivo styles.css
     new MiniCssExtractPlugin({
-      filename: "styles.css", // Nome do arquivo CSS de saída
+      filename: "styles.css",
     }),
+
+    // Permite que partes específicas do código sejam atualizadas dinamicamente no navegador sem a necessidade de recarregar a página inteira
     new webpack.HotModuleReplacementPlugin(),
   ],
   devServer: {
+    // Configuração para realizar build automática
     static: "./dist",
     hot: true,
   },
-  mode: "development", // Modo de construção do webpack ('development', 'production' ou 'none')
+  mode: "development",
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/, // Expressão regular para arquivos CSS, SASS e SCSS
+        // Configuração para aceitar CSS, SASS e SCSS
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader, // Extrai o CSS para arquivos separados
-          "css-loader", // Carrega arquivos CSS, resolve dependências e importações
-          "sass-loader", // Compila SASS/SCSS para CSS
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
         ],
       },
       {
-        test: /\.css$/i, // Expressão regular para arquivos CSS simples
+        // Configuração para aceitar CSS simples
+        test: /\.css$/i,
         use: [
-          "style-loader", // Injeta CSS no DOM usando uma tag <style>
-          "css-loader", // Carrega arquivos CSS, resolve dependências e importações
+          "style-loader",
+          "css-loader",
         ],
       },
       {
-        test: /\.js$/, // Expressão regular para arquivos JavaScript
-        exclude: /node_modules/, // Exclui o diretório 'node_modules' do processo de transpilação
+        // Configuração para aceitar JS e usar Babel para transpilar
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: "babel-loader", // Usa o Babel para transpilar código JavaScript
+          loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"], // Conjunto de presets do Babel para compatibilidade com ambientes
+            presets: ["@babel/preset-env"],
           },
         },
       },
       {
+        // Configuração para aceitar arquivos de imagem
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
