@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <link
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="header">
+    <header>
       <div class="icon-back">
         <i class="fa-solid fa-arrow-left fa-xl"></i>
       </div>
@@ -27,29 +27,34 @@
         <img src="./assets/back-icon.png" alt="Back" class="back-icon" /> -->
       <h1>The Lumineers</h1>
       <!-- </div> -->
-    </div>
-    <div class="main">
-      <div class="listeners">220,117,180 monthly listeners</div>
-      <div class="controls">
-        <button class="button">Following</button>
-      </div>
-      <div class="popular">
+    </header>
+    <main>
+      <section>
+        <p class="listeners">220,117,180 monthly listeners</p>
+        <div class="controls">
+          <button class="button">Following</button>
+        </div>
+      </section>
+
+      <aside>
         <h2>Popular</h2>
-        <div class="track">
+        <article class="track">
           <img src="./assets/ho-hey.png" alt="Ho Hey" />
           <div class="track-info">
             <h3>Ho Hey</h3>
             <p>1,289,943,584 listens</p>
           </div>
-        </div>
-        <div class="track">
+        </article>
+
+        <article class="track">
           <img src="./assets/ophelia.png" alt="Ophelia" />
           <div class="track-info">
             <h3>Ophelia</h3>
             <p>1,290,579,530 listens</p>
           </div>
-        </div>
-        <div class="track">
+        </article>
+
+        <article class="track">
           <img
             src="./assets/spotless.png"
             alt="Spotless (feat. The Lumineers)"
@@ -58,18 +63,19 @@
             <h3>Spotless (feat. The Lumineers)</h3>
             <p>172,739,016 listens</p>
           </div>
-        </div>
-        <div class="track">
+        </article>
+
+        <article class="track">
           <img src="./assets/ho-hey.png" alt="Followers in Your Hair" />
           <div class="track-info">
             <h3>Followers in Your Hair</h3>
             <p>348,972,143 listens</p>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <nav class="nav">
+        </article>
+      </aside>
+    </main>
+    <footer>
+      <nav>
         <ul class="nav-list">
           <li class="nav-item">
             <i class="fa-solid fa-house fa-2xl icon"></i>
@@ -85,7 +91,6 @@
           </li>
         </ul>
       </nav>
-    </div>
-    <script src="./bundle.js"></script>
+    </footer>
   </body>
 </html>
