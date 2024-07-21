@@ -124,6 +124,7 @@ main {
     h2 {
       font-size: 20px;
       margin-bottom: 8px;
+      margin-top: 25px;
     }
 
     .track {
@@ -152,6 +153,14 @@ main {
 
       .track-info {
         flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+          display: flex;
+          flex-direction: column;
+        }
 
         h3 {
           font-size: 16px;
@@ -167,6 +176,10 @@ main {
       }
     }
   }
+}
+
+.test {
+  align-items: flex-end;
 }
 
 footer {
