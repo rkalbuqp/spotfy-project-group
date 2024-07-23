@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgba(15, 12, 16, 1);
-  color: #fff;
+  color: $text-color-white;
   display: absolute;
   height: 100vh;
 
@@ -34,7 +34,7 @@ header {
   position: relative;
   width: 390px;
   height: 319px;
-  background-color: rgba(18, 18, 18, 1);
+  background-color: $secondary-color;
 
   h1 {
     position: absolute;
@@ -74,7 +74,7 @@ main {
     .icon-pause {
       display: flex;
       align-items: center;
-      background-color: rgba(101, 212, 110, 1);
+      background-color: $primary-color;
       color: rgba(18, 18, 18, 1);
       padding: 20px;
       border-radius: 40px;
@@ -93,6 +93,7 @@ main {
   .liked-songs {
     display: flex;
     align-items: center;
+    margin-top: 0.5rem;
 
     img {
       width: 2.5rem;
@@ -125,13 +126,13 @@ main {
       .heart-icon {
         display: flex;
         padding: 0.3rem;
-        background-color: rgba(101, 212, 110, 1);
+        background-color: $primary-color;
         border-radius: 50%;
         position: absolute;
         bottom: 0.8rem;
         right: 0.6rem;
         font-size: 0.8rem;
-        color: #fff;
+        color: $text-color-white;
         cursor: pointer;
       }
     }
@@ -160,9 +161,9 @@ main {
     align-items: flex-start;
 
     .button {
-      background-color: rgba(18, 18, 18, 1);
-      color: #fff;
-      border: 1px solid #fff;
+      background-color: $secondary-color;
+      color: $text-color-white;
+      border: 1px solid $text-color-white;
       padding: 8px 16px;
       border-radius: 20px;
       cursor: pointer;
@@ -191,12 +192,15 @@ main {
   }
 
   aside {
-    margin-bottom: 16px;
+    margin-top: 2rem;
 
     h2 {
       font-size: 20px;
-      margin-bottom: 8px;
-      margin-top: 25px;
+      margin-bottom: 0.6rem;
+    }
+
+    .ellipsis-listeners {
+      color: $text-color;
     }
 
     .track {
@@ -250,16 +254,13 @@ main {
   }
 }
 
-.test {
-  align-items: flex-end;
-}
-
 footer {
   display: flex;
-  position: relative;
-  margin-top: 29rem;
+  position: fixed;
+  bottom: 0;
+  
   width: 390px;
-  padding: 16px 56px 56px 56px;
+  padding: 30px 56px 45px 56px;
   background: $nav-color;
 
   nav {
@@ -270,7 +271,7 @@ footer {
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style-type: none;
 
     li {
@@ -284,7 +285,7 @@ footer {
 .label-icon {
   font-size: 1rem;
   color: $text-color;
-  margin-top: 1.8rem;
+  margin-top: 1.7rem;
 }
 
 .icon-back {
@@ -294,7 +295,7 @@ footer {
   cursor: pointer;
   color: white;
   padding: 0.8rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 1);
   border-radius: 20px;
 }
 
